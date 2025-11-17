@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTrack Pro - Meal Planner</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">FitTrack Pro</div>
+      <div class="nav-links">
+        <a href="/index.html">Dashboard</a>
+        <a href="/activity.html">Activity Log</a>
+        <a href="/meals.html" class="active">Meal Planner</a>
+        <a href="/insights.html">Insights</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Meal Planner</h1>
+        <div class="total-calories">
+          <span>Total Daily Intake:</span>
+          <span class="calories-count" id="totalCalories">0</span>
+          <span>kcal</span>
+        </div>
+      </header>
+
+      <div class="meals-grid">
+        <div class="meal-section">
+          <div class="meal-header">
+            <h2>🌅 Breakfast</h2>
+            <button class="btn-add-meal" data-meal="breakfast">+ Add Item</button>
+          </div>
+          <div class="meal-items" id="breakfastItems"></div>
+          <div class="meal-total">
+            Total: <span id="breakfastTotal">0</span> kcal
+          </div>
+        </div>
+
+        <div class="meal-section">
+          <div class="meal-header">
+            <h2>☀️ Lunch</h2>
+            <button class="btn-add-meal" data-meal="lunch">+ Add Item</button>
+          </div>
+          <div class="meal-items" id="lunchItems"></div>
+          <div class="meal-total">
+            Total: <span id="lunchTotal">0</span> kcal
+          </div>
+        </div>
+
+        <div class="meal-section">
+          <div class="meal-header">
+            <h2>🌙 Dinner</h2>
+            <button class="btn-add-meal" data-meal="dinner">+ Add Item</button>
+          </div>
+          <div class="meal-items" id="dinnerItems"></div>
+          <div class="meal-total">
+            Total: <span id="dinnerTotal">0</span> kcal
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal" id="addMealModal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeMealModal">&times;</span>
+        <h2>Add Meal Item</h2>
+        <form id="mealForm">
+          <div class="form-group">
+            <label for="mealItemName">Item Name</label>
+            <input type="text" id="mealItemName" placeholder="e.g., Grilled Chicken" required />
+          </div>
+          <div class="form-group">
+            <label for="mealItemCalories">Calories</label>
+            <input type="number" id="mealItemCalories" placeholder="e.g., 300" min="1" required />
+          </div>
+          <button type="submit" class="btn-primary">Add Item</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="/meals.js"></script>
+  </body>
+</html>

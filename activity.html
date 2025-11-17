@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTrack Pro - Activity Log</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">FitTrack Pro</div>
+      <div class="nav-links">
+        <a href="/index.html">Dashboard</a>
+        <a href="/activity.html" class="active">Activity Log</a>
+        <a href="/meals.html">Meal Planner</a>
+        <a href="/insights.html">Insights</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Activity Log</h1>
+        <button class="btn-primary" id="addActivityBtn">+ Add Activity</button>
+      </header>
+
+      <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All Activities</button>
+        <button class="filter-btn" data-filter="morning">Morning</button>
+        <button class="filter-btn" data-filter="afternoon">Afternoon</button>
+        <button class="filter-btn" data-filter="evening">Evening</button>
+      </div>
+
+      <div class="activities-list" id="activitiesList"></div>
+    </main>
+
+    <div class="modal" id="addActivityModal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <h2>Add New Activity</h2>
+        <form id="activityForm">
+          <div class="form-group">
+            <label for="activityName">Activity Name</label>
+            <input type="text" id="activityName" placeholder="e.g., Running, Cycling" required />
+          </div>
+          <div class="form-group">
+            <label for="activityDuration">Duration (minutes)</label>
+            <input type="number" id="activityDuration" placeholder="e.g., 30" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="activityCalories">Calories Burned</label>
+            <input type="number" id="activityCalories" placeholder="e.g., 200" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="activityTime">Time of Day</label>
+            <select id="activityTime" required>
+              <option value="">Select Time</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Add Activity</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="successModal">
+      <div class="modal-content success-modal">
+        <div class="success-icon">✓</div>
+        <h2>Activity Added Successfully!</h2>
+        <button class="btn-primary" id="closeSuccessModal">OK</button>
+      </div>
+    </div>
+
+    <script type="module" src="/activity.js"></script>
+  </body>
+</html>

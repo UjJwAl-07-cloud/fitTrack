@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTrack Pro - Daily Wellness Overview</title>
+    <link rel="stylesheet" href="/style.css" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">FitTrack Pro</div>
+      <div class="nav-links">
+        <a href="/index.html" class="active">Dashboard</a>
+        <a href="/activity.html">Activity Log</a>
+        <a href="/meals.html">Meal Planner</a>
+        <a href="/insights.html">Insights</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Daily Wellness Overview</h1>
+        <div class="live-clock" id="liveClock"></div>
+      </header>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon steps-icon">👟</div>
+          <h3>Steps Taken</h3>
+          <div class="circular-progress">
+            <svg class="progress-ring" width="120" height="120">
+              <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+              <circle class="progress-ring-circle" id="stepsCircle" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="progress-value">
+              <span id="stepsValue">0</span>
+              <small>/ 10000</small>
+            </div>
+          </div>
+          <p class="metric-label">Daily Goal: 10,000 steps</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon calories-icon">🔥</div>
+          <h3>Calories Burned</h3>
+          <div class="circular-progress">
+            <svg class="progress-ring" width="120" height="120">
+              <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+              <circle class="progress-ring-circle" id="caloriesCircle" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="progress-value">
+              <span id="caloriesValue">0</span>
+              <small>/ 2500</small>
+            </div>
+          </div>
+          <p class="metric-label">Daily Goal: 2,500 kcal</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon water-icon">💧</div>
+          <h3>Water Intake</h3>
+          <div class="circular-progress">
+            <svg class="progress-ring" width="120" height="120">
+              <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+              <circle class="progress-ring-circle" id="waterCircle" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="progress-value">
+              <span id="waterValue">0</span>
+              <small>/ 8</small>
+            </div>
+          </div>
+          <p class="metric-label">Daily Goal: 8 glasses</p>
+        </div>
+      </div>
+
+      <div class="quick-stats">
+        <div class="stat-item">
+          <span class="stat-label">Active Minutes</span>
+          <span class="stat-value" id="activeMinutes">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Weekly Average Steps</span>
+          <span class="stat-value" id="weeklyAvgSteps">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Streak Days</span>
+          <span class="stat-value" id="streakDays">0</span>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/dashboard.js"></script>
+  </body>
+</html>

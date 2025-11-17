@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTrack Pro - Insights & Summary</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">FitTrack Pro</div>
+      <div class="nav-links">
+        <a href="/index.html">Dashboard</a>
+        <a href="/activity.html">Activity Log</a>
+        <a href="/meals.html">Meal Planner</a>
+        <a href="/insights.html" class="active">Insights</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Insights & Summary</h1>
+        <div class="header-actions">
+          <button class="btn-secondary" id="downloadBtn">📥 Download Summary</button>
+          <button class="btn-danger" id="resetBtn">🔄 Reset Dashboard</button>
+        </div>
+      </header>
+
+      <div class="insights-grid">
+        <div class="chart-card">
+          <h2>Weekly Activity Duration (Minutes)</h2>
+          <div class="bar-chart" id="activityChart"></div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-color" style="background: #4CAF50;"></span>
+              <span>Activity Duration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h2>Weekly Calories Burned</h2>
+          <div class="bar-chart" id="caloriesChart"></div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-color" style="background: #FF9800;"></span>
+              <span>Calories Burned</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h2>Weekly Steps Progress</h2>
+          <div class="bar-chart" id="stepsChart"></div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-color" style="background: #2196F3;"></span>
+              <span>Steps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h2>Daily Calorie Intake vs Burn</h2>
+          <div class="comparison-chart" id="comparisonChart"></div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-color" style="background: #FF5722;"></span>
+              <span>Intake</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background: #4CAF50;"></span>
+              <span>Burned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h3>Total Activities This Week</h3>
+          <div class="summary-value" id="totalActivities">0</div>
+        </div>
+        <div class="summary-card">
+          <h3>Total Calories Burned</h3>
+          <div class="summary-value" id="totalCaloriesBurned">0</div>
+        </div>
+        <div class="summary-card">
+          <h3>Average Daily Steps</h3>
+          <div class="summary-value" id="avgDailySteps">0</div>
+        </div>
+        <div class="summary-card">
+          <h3>Most Active Day</h3>
+          <div class="summary-value" id="mostActiveDay">-</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal" id="downloadModal">
+      <div class="modal-content success-modal">
+        <div class="success-icon">📄</div>
+        <h2>Summary Downloaded!</h2>
+        <p>Your fitness summary has been prepared.</p>
+        <button class="btn-primary" id="closeDownloadModal">OK</button>
+      </div>
+    </div>
+
+    <div class="modal" id="resetModal">
+      <div class="modal-content">
+        <h2>Reset Dashboard</h2>
+        <p>Are you sure you want to reset all data? This action cannot be undone.</p>
+        <div class="modal-actions">
+          <button class="btn-danger" id="confirmReset">Yes, Reset</button>
+          <button class="btn-secondary" id="cancelReset">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/insights.js"></script>
+  </body>
+</html>
